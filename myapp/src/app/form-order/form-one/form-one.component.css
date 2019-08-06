@@ -1,0 +1,20 @@
+/* div.col-sm-6 > input{
+  width: 50%;
+} */
+div[class^="col"]{
+
+}
+div input, label{
+  display: inline;
+  vertical-align: bottom;
+  width: 100%;
+  padding: 0rem;
+  margin: 0rem;
+}
+.pallet-info {
+  background-color: rgba(252, 205, 119, 0.623);
+}
+.pallet-body {
+  background-color: rgba(149, 248, 227, 0.568)
+}
+

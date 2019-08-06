@@ -1,0 +1,20 @@
+<div class="container">
+  <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+  <button type="button" class="btn btn-success btn-s"
+    (click)="uploader.uploadAll()"
+    [disabled]="!uploader.getNotUploadedItems().length" >
+        Upload an Image
+  </button>
+</div>
+
+<div class="card col-4">
+  <img src="{{myImage}}" class="card-img-top" >
+  <!-- <h1>{{myImage}}</h1> -->
+  <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<router-outlet> </router-outlet>

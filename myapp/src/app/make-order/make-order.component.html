@@ -1,0 +1,34 @@
+{{diagnostic}}
+<div class='container'>
+  <h1>Submit basic info: </h1>
+  <form (ngSubmit)="onSubmit()" #userInfo="ngForm">
+    <div class='form-group'>
+      <label>first name</label>
+      <input type='text' class='form-control'
+             id='firstName' required
+             [(ngModel)]='model.firstName' name='firstName'>
+      TODO: remove this: {{model.firstName}}
+    </div>
+
+    <div class='form-group'>
+      <label>last name</label>
+      <input type='text' class='form-control' id='lastName' required
+             [(ngModel)]='model.lastName' name='lastName' #spy='ngModel'>
+      <div [hidden]='spy.valid || spy.pristine' class='alert-danger'>
+        name is required
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label>age</label>
+      <select class='form-control' id='age' required
+              [(ngModel)]='model.age' name='age'>
+        <option *ngFor='let a of age' [value]='a'>{{a}}</option>
+      </select>
+      TODO: remove this: {{model.age}}
+    </div>
+
+    <button type='submit' class='btn btn-success' [disabled]="!userInfo.form.valid" (click)="buttonClick(); userInfo.reset()" >Click me</button>
+
+  </form>
+</div>
